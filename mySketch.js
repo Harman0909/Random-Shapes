@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+function setup() {
+	frameRate(5);
+	createCanvas(windowWidth, windowHeight);
+	background(255);
+}
 
-<head>
-	<meta charset="utf-8" />
-	<!-- keep the line below for OpenProcessing compatibility -->
-	<script src="https://openprocessing.org/openprocessing_sketch.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
-	<script src="mySketch.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>   
-	
-</body>
-
-</html>
+function draw() {
+	let shape = {
+		x: random(windowWidth),
+		y: random(windowHeight),
+		type: int(random([1, 2]))
+	}
+	fill(random(255));
+	if (shape.type == 1) {
+		ellipse(shape.x, shape.y, random([10, 25, 50]), random([50, 80, 90]));
+	}
+	if (shape.type == 2) {
+		rect(shape.x, shape.y, random([10, 25, 50]), random([50, 80, 90]));
+	}
+}
